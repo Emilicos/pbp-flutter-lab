@@ -13,7 +13,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Tugas 6
+## Tugas 7
 
 ### Soal
 #### 1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.<br>
@@ -36,3 +36,40 @@ Final dan const merupakan kedua hal yang sangat mirip dan memiliki fungsionalita
 3. Saya menambahkan function baru untuk decrement
 4. Saya membuat sebuah widgets bernama stack didalam untuk dapat menghasilkan 2 button yang dapat saya kontrol posisinya
 5. Saya menambahkan kondisi apabila counter = 0, button dihilangkan
+
+## Tugas 8
+
+### Soal
+#### 1. Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement. <br>
+Perbedaan push dengan pushReplacement pada navigator adalah pada fungsi pop yang ada. Untuk push replacement, maka apabila kita visualisasikan dengan stack, terlihat bahwa push replacement menggantikan page sebelumnya dengan page yang dibuka, sedangkan pop hanya menumpuk page-page tersebut dalam stack. Visuaslisasi stack:
+Push: A B C D -> hasil akhir stack apabila dibuka page A, B, C, D adalah A B C D (D paling atas)
+Push Replacement : A B C D -> hasil akhir stack apabila dibuka page A, B, C, D adalah D
+
+#### 2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya. <br>
+Center: Membuat komponen di center
+Column: Membuat sebuah column agar dapat membuat komponen atas dan bawah
+RoW: Membuat sebuah row agar suatu komponen dapat saya lakukan **space between**
+TextButton: Sebuah button yang memiliki text
+DropdownButtonFormField: Berbeda dengan lab sebelumnya, apabila DropDownbuttonFormField memiliki validator
+Padding: Untuk memberikan padding
+TextFormField: Untuk membuat input text.
+
+#### 3. Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed). <br>
+onPressed = apabila dipencet
+onChange = apabila ada perubahan
+onTap = Apabila dipencet, tidak berbeda jauh seperti onPressed
+onSaved = Apabila ada disimpan
+onSubmitted = Apabila dikumpulkan form
+Masih banyak yang lainnya, yang dapat dikatakan, namun 5 event yang diatas merupakan event yang sering digunakan
+
+#### 4.  Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter. <br>
+Navigator mengontrol Stack yang berisi objek-objek rute yang mempunya 2 tipe yaitu deklaratif dan imperatif API (pop, push). Navigation sendiri beraksi seperti stack sehingga halaman yang terakhir ada di stack merupakan halaman yang akan diperlihatkan. Setiap kali ada perubahan halaman, maka halaman tersebut akan di push kedalam stack sehingga berada di top of stack. Namun apabila kita ingin kembali ke halaman sebelumnya, kita harus melakukan pop. 
+
+#### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas. <br>
+1. Membuat 2 file yaitu addBudget dan dataBudget.
+2. Membuat drawer pada ketiga file tersebut 
+3. Membuat input field pada addBudget
+4. Menghandle input field pada addBudget
+5. Memasukkan data yang didapat pada list
+6. Menggunakan list tersebut lalu passing argumen ke dataBudget
+7. Pada dataBudget, digunakan data yang didapat untuk menampilkan hasil yang diinginkan. 
