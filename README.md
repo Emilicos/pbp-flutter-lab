@@ -73,3 +73,42 @@ Navigator mengontrol Stack yang berisi objek-objek rute yang mempunya 2 tipe yai
 5. Memasukkan data yang didapat pada list
 6. Menggunakan list tersebut lalu passing argumen ke dataBudget
 7. Pada dataBudget, digunakan data yang didapat untuk menampilkan hasil yang diinginkan. 
+
+## Tugas 9
+
+### Soal
+#### 1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON? <br>
+Tentu saja bisa, tanpa menggunakan models, maka yang dikirim akan berupa data mentah dalam `Future<http.Response>`. Hal ini akan membuat sulit untuk developer agar mengakses data tersebut, oleh karena itu dengan bantuan models kita dapat mengubah http response tersebut menjadi dart object. Menurut saya lebih baik untuk membuat model terlebih dahulu, tidak hanya lebih baik dan memudahkan namun juga agar code bisa menjadi lebih rapi
+
+#### 2. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya. <br>
+- Row dan Column: untuk membuat baigan-bagian agar mudah terstruktur
+- Container: Untuk membuat semacam limiter/panduan
+- ListView: untuk scrolling dan showing data
+- FutureBuilder: build serta fetching data
+- Widget-widget sebelumnya dipakai di lab sebelumnya
+
+#### 3. Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter. <br>
+Cara saya:
+- Membuat model untuk processing data
+- Menggunakan future builder agar bisa fetching data dan looping data
+- Membuat fungsi untuk fetching data
+- Mauskkan list tersebut ke 2 list terpisah (1 list untuk global, 1 lagi list untuk di return)
+- Menggunakan list yang di return untuk data title
+- Menggunakan list global untuk checkbox (bonus)
+Sehingga mekanisme nya 
+- Menambahkan package http serta memasukkan nya kedalam depedencies
+- Membuat request kepada url yang diinginkan
+- Mendapatkan response tersebut lalu (apabila ada models) diubah menjadi object dart
+- Melakukan looping pada object dart yang dimasukkan dalam list 
+- Mengeluarkan data tersebut sesuai dengan looping yang dilakukan
+
+#### 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas. <br>
+- Melanjutkan dari lab kemarin
+- Merefactor seluruh halaman
+- Membuat 2 page baru untuk list dan detail view
+- Membuat widget yang stateful pada list dan stateless pada detail
+- Melakukan fetching data agar diperlihatkan pada list
+- Membuat model untuk processing fetching
+- Memasukkan data pada 2 list 
+- Membuat halaman baru detail dengan passing menggunakan context argument yang ada
+- Menggunakan list yang tidak direturn untuk membuat bonus

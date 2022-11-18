@@ -1,6 +1,6 @@
-import 'package:counter_7/drawer_opt.dart';
+import 'package:counter_7/widgets/drawer_opt.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/add_budget.dart';
+import 'package:counter_7/pages/add_budget.dart';
 
 class MyDataBudgetPage extends StatefulWidget {
   const MyDataBudgetPage({super.key});
@@ -18,7 +18,7 @@ class _MyDataBudgetPageState extends State<MyDataBudgetPage> {
         title: Text('Data Budget'),
       ),
       drawer: DrawerOpt(),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
